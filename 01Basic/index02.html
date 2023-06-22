@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 변수 선언 */
+      var num1 = 1;
+      var num2 = "10";
+      var num3 = "10";
+
+      num1 = 3.14;
+      num2 = 10;
+      num3 = "홍길동";
+
+      var num4 = num1 + num2; //13.14
+      console.log(num4);
+      console.log(num3);
+      console.log(num4 + "10");
+      console.log("-------------------------");
+
+      /* boolean 타입은 1 or 0 으로도 실제 표현됨 */
+      var bool1 = true; //1  은 true로 판별
+      var bool2 = false; //0 은 false 로 판별
+
+      //undefined 은 초기값을 지정하지 않을 때 나타난다.
+      var un;
+      console.log(un);
+
+      //null 은 초기값은 들어갔지만 없는 경우에 나타난다.
+      var tag = document.getElementById("xxx");
+      console.log(tag);
+
+      //typeof 변수명 : 변수의 타입을 확인할 수 있음.
+      console.log(typeof num1);
+      console.log(typeof num2);
+      console.log(typeof num3);
+      console.log(typeof bool1);
+      console.log(typeof un);
+      console.log(typeof tag);
+    </script>
+
+    <script>
+      //출력문
+      //alert("희희 alert 출력");
+
+      /* confirm 예 아니오 를 가지고 있는 확인창 */
+      /* confirm에 사용자가 예 , 아니오 선택에 따라 반환값을 받아올 수 있음 */
+      //var result = confirm("확인창");
+      //console.log(result);
+      //console.log(result + 1); // 1 or 2 boolean 값을 숫자로 바꿔서 계산가능 1(참) or 0 (거짓)
+
+      document.write("hello"); //브라우저로 출력 ( 잘 안 씀 )
+
+      /* === !== 3개짜리 비교연산자? */
+      /* 값과 타입까지 같아야 true를 반환한다. */
+      /* ex) 10 == "10" => true
+            10 === "10" => false
+            10 != "10" => false 
+            10 !== "10" => true */
+    </script>
+  </body>
+</html>
