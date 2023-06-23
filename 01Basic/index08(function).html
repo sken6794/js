@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //함수 선언하고 선언 전, 후 다 호출 가능
+      //호이스팅 - 선언적 함수에서만 가능하다.
+      fname();
+
+      var re = func(10, 30);
+      console.log(re);
+
+      function fname() {
+        console.log("함수호출");
+      }
+      function func(a, b) {
+        //매개변수 작성 방법
+        return a + b; //리턴이 필요하면 적으면 된다
+      }
+      fname();
+
+      //함수를 변수에 저장할 수 있다.
+      var f = func;
+      var re = f(10, 20);
+      console.log(re);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //원격의 컴퓨터(서버)와 데이터를 주고 받을 때 JSON 표기형식을 사용한다.
+
+      var data = [
+        { id: "kkk123", title: "안녕", age: 10 },
+        { id: "aaa123", title: "hello", age: 20 },
+        { id: "bbb123", title: "bye", age: 30 },
+      ];
+
+      //data 를 전달할 때 반드시 문자열 이어야 한다.
+      // JSON.stringify(jsondata) => json 표기 형식을 문자열로 변환해준다.
+      var re = JSON.stringify(data);
+      console.log(re);
+
+      var obj = JSON.parse(re);
+      console.log(obj);
+
+      //JSON 문자열을 표기할 때 엄격한 규칙 => 숫자를 제외한 키 값은 반드시 "" 로 묶인다.
+      /*      var exma = {
+        id: "홍길동",
+      }
+      */
+    </script>
+  </body>
+</html>

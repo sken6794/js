@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //JS에서 객체는 {} 로 표기하고, JAVA의 MAP 과 같다.
+
+      var person = {
+        name: "홍길동",
+        age: 30,
+        addr: "서울시 서초구",
+        phone: "010-1234-4564",
+        arr: [1, 2, 3],
+      };
+      console.log(person.age);
+
+      // JS {} 에 접근하는 방식은 2가지가 있다. 2가지 모두 잘 알아두도록 하자.
+
+      // 방법1 : . 으로 접근 가능함
+      console.log(person.name);
+      console.log(person.phone);
+      console.log(person.arr[0]);
+
+      // 방법2 : 객체["key"]
+      // [] 안에 "" 을 써서 key를 지정해야한다. "" 을 안쓰면 변수명 처럼 인식함
+      console.log(person["name"]);
+      console.log(person["arr"][2]);
+
+      console.log("=-======================================");
+
+      //객체 안에 객체
+      var exam = {
+        kor: 30,
+        eng: 40,
+      };
+      var park = {
+        name: "김수한무",
+        age: 22,
+        exam: exam,
+      };
+
+      //객체 안 객체에 접근하는 방법
+      console.log(park.exam.kor);
+      console.log(park["exam"]["kor"]);
+
+      //객체 안에 함수
+      var obj = {
+        func: function () {
+          //console.log("호출됨");
+          return 5;
+        },
+      };
+
+      //객체 안에 있는 함수 호출방법
+      //console.log(obj["func"]());
+      console.log(obj.func());
+      //obj.func();
+
+      //리스트 안에 객체
+      var arr = [
+        {
+          id: 1,
+          name: "홍길동",
+        },
+        {
+          id: 2,
+          name: "이순신",
+        },
+        {
+          id: 3,
+          name: "신사임당",
+        },
+      ];
+      //반복문으로 id와 name을 출력
+      for (var i = 0; i < arr.length; i++) {
+        console.log("id : ", arr[i].id);
+        console.log("name : ", arr[i].name);
+      }
+
+      for (var x in arr) {
+        console.log(arr[x].name);
+        console.log(arr[x].id);
+      }
+    </script>
+  </body>
+</html>

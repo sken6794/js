@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //함수의 이름을 따로 설정안하고 변수선언하면서 함수를 바로 만들어서 저장
+      //익명함수는 선언 전에 호출 할 수 없다. => 호이스팅 안됨
+      //선언 후 호출하여야 한다.
+      var func = function () {
+        console.log("익명 함수 호출");
+      };
+      func();
+
+      var func2 = function (a, b) {
+        return a + b;
+      };
+      var re = func2(10, 5);
+      console.log(re);
+
+      console.log(func2(10, 20));
+      console.log("========================================");
+
+      //다음 함수와 동일한 실행결과를 보이는 익명함수를 만드세요 (호출하기 전에 선언)
+      //매개변수 1개 받아서 짝 홀수 판별
+
+      var method = function (a) {
+        if (a % 2 === 0) {
+          return "짝수";
+        } else {
+          return "홀수";
+        }
+      };
+
+      console.log(method(9));
+
+      //매개변수 4개 받아서 평균을 정수로 리턴
+      var point = function (a, b, c, d) {
+        var re = parseInt((b + c + d) / 3);
+        return a + "의 평균은:" + re;
+      };
+
+      console.log(point("홍길동", 88, 90, 90));
+    </script>
+  </body>
+</html>

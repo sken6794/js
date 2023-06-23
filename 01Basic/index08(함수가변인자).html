@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var func = function (a, b) {
+        //console.log(a, b);
+        //arguments.length = 전달받은 매개변수 길이
+        //arguments[index] 전달받은 매개변수 의 index 위치 값
+        for (var i = 0; i < arguments.length; i++) {
+          console.log(arguments[i]);
+        }
+      };
+      //매개변수 개수는 정확히 일치하지 않아도 된다. 그래도 맞춰서 호출하는게 낫다
+      func(1, 2, 3, 4, 5); // 1,2
+    </script>
+  </body>
+</html>
