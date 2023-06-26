@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>태그에 속성을 얻을 때는 . 을 사용한다</h3>
+    <!-- 함수가 실행되는 곳에서 this를 적어 해당태그를 매개변수로 전달 -->
+    <input type="checkbox" name="xxx" value="1" onclick="check(this)" />항목1
+    <input type="checkbox" name="xxx" value="2" onclick="check(this)" />항목2
+    <input type="checkbox" name="xxx" value="3" onclick="check(this)" />항목3
+    <input type="checkbox" name="xxx" value="4" onclick="check(this)" />항목4
+
+    <script>
+      /* 태그를 전달받은 함수에서 태그의 속성에 접근할 때 . 으로 접근하여 value를 얻을 수 있음 */
+      function check(params) {
+        console.log(params.name);
+        console.log(params.value);
+        console.log(params.type);
+        alert(params.value + "항목 체크함");
+      }
+    </script>
+  </body>
+</html>

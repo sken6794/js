@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 태그에서의 this는 자기자신 => this가 적힌 곳의 태그를 의미함. -->
+
+    <button onclick="check(this)">버튼이벤트</button>
+    <!-- 전달한 매개변수 this 가 tag 인것을 확인 -->
+    <script>
+      function check(params) {
+        //console.log(params); //this 전달받으니 해당 태그임
+        //console.log(params.innerHTML); //HTML의 inner 값을 얻어옴
+        params.innerHTML = "ㅇㅇㅇ"; //innerHTML 값을 수정할 수 있음
+
+        /* this가 적힌곳에 따라 참조하는 this값이 달라진다 => 렉시컬스코프 개념 때문 */
+      }
+    </script>
+
+    <button id="btn">이벤트 함수안에서 this</button>
+
+    <script>
+      /* js에서 this의 의미 - 선언된 위치에 따라서 달라진다.(렉시컬스코프)*/
+      var a = 1;
+      function xxx() {
+        var a = 10;
+        console.log(this); //window 객체
+        console.log(a); //지역변수 a 10
+        console.log(this.a); //전역변수 a 1 을 각각 출력
+      }
+      xxx();
+
+      /* 이벤트 함수 안에서 this */
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        console.log(this); //해당 id 가 있는, 함수가 호출된 곳에서의 태그 자신
+    </script>
+  </body>
+</html>

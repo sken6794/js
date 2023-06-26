@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">표준이벤트</button>
+    <script>
+      var btn = document.getElementById("btn");
+
+      /* 함수명 옆에는 () 를 작성하지 않는다. ()를 작성하는 것은 return 값을 받아온다는 의미이다. */
+      // 첫번째 방법
+      /* btn.addEventListener("click", test);
+
+      function test(params) {
+        alert("표준이벤트");
+      } */
+      btn.addEventListener("click", function (params) {
+        var test = confirm("익명함수로 띄우기");
+        console.log(test);
+      });
+    </script>
+
+    <button id="btn2">표준이벤트는 동일이벤트 트리거가 된다.</button>
+
+    <script>
+      var btn2 = document.getElementById("btn2");
+      //기본이벤트는 동일이벤트 트리거가 될 수 없다. 덮어쓰기가 된다.
+      /* btn2.onclick = function () {
+        alert("1번 이벤트");
+      };
+      btn2.onclick = function () {
+        alert("2번 이벤트");
+      }; */
+      btn2.addEventListener("click", function () {
+        alert("1번 이벤트");
+      });
+      btn2.addEventListener("click", function () {
+        alert("2번 이벤트");
+      });
+      /* addEventListener 로 하나의 태그에 다수의 이벤트를 걸 수 있다. */
+    </script>
+  </body>
+</html>

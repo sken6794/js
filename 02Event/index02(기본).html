@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">기본이벤트</button>
+
+    <script>
+      //console.log(document.getElementById("btn"));
+      var btn = document.getElementById("btn");
+      /* onclick 속성에 익명함수 대입 */
+      btn.onmouseover = function (params) {
+        alert("기본이벤트");
+      };
+    </script>
+  </body>
+</html>
