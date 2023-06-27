@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="welcome"></div>
+    <div id="name">
+      <input type="text" id="mem" placeholder="이름을 입력하세요" />
+      <button id="okbtn">확인</button>
+    </div>
+    <br />
+    <input type="text" class="todo" placeholder="할일 적기" />
+    <button id="todobtn">확인</button>
+
+    <ul id="list"></ul>
+
+    <script>
+      var okbtn = document.getElementById("okbtn");
+      var mem = document.getElementById("mem");
+      var nametag = document.getElementById("name");
+      var welcome = document.querySelector(".welcome");
+
+      okbtn.onclick = function () {
+        var user = mem.value;
+
+        var p = document.createElement("p");
+        p.innerHTML = user + "님 반갑습니다";
+        nametag.style = "display:none";
+        welcome.appendChild(p);
+      };
+
+      var todobtn = document.getElementById("todobtn");
+      var todo = document.querySelector(".todo");
+      var list = document.getElementById("list");
+      todobtn.onclick = function () {
+        var li = document.createElement("li");
+        li.innerHTML =
+          todo.value +
+          '<button onclick="del(this.parentElement)">지우기</button>';
+        list.appendChild(li);
+        todo.value = "";
+      };
+
+      function del(params) {
+        params.remove();
+      }
+    </script>
+  </body>
+</html>

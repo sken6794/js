@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>할 일 목록</h3>
+    <input type="text" class="todo" placeholder="할 일을 작성" />
+    <button id="btn">할 일 목록 추가하기</button>
+    <ul class="list">
+      <!-- <li><a href="http://www.naver.com">할 일</a></li> -->
+    </ul>
+
+    <script>
+      var btn = document.getElementById("btn");
+      var todo = document.querySelector(".todo");
+      var list = document.querySelector(".list");
+
+      btn.onclick = function (params) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        var text = document.createTextNode(todo.value); //문자열 노드 생성
+
+        a.href = "https://www.naver.com";
+        //a.innerHTML = "문자열";
+        //a.appendChild("문자열x"); //노드 (엘리먼트)만 추가 가능
+
+        a.appendChild(text);
+        li.appendChild(a);
+        list.appendChild(li); //ul 자식으로 li 추가
+        todo.value = "";
+        console.log(li);
+        /* console.log(a);
+        console.log(text); */
+      };
+    </script>
+  </body>
+</html>

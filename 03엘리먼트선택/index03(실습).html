@@ -22,13 +22,15 @@
       var num = document.getElementById("num");
 
       p.onclick = function () {
-        num.value = parseInt(num.value) + 1;
+        /* num.value = parseInt(num.value) + 1; */
+        num.value++;
       };
       m.onclick = function () {
         if (num.value <= 0) {
           alert("0보다 작을 수 없습니다.");
         } else {
-          num.value = num.value - 1;
+          /* num.value = num.value - 1; */
+          num.value--;
         }
       };
     </script>
