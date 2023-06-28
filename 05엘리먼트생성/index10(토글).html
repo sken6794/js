@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>클래스 속성제어</h3>
+    <button type="button" class="btn btn-default" id="btn">클래스 변경</button>
+
+    <script>
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        //btn.class = "xxxx";
+        //클래스를 변경하는 특별한 방법을 제공 해줌
+        // btn.className = 클래스 이름을 문자열로 반환
+        // btn.classList
+        btn.classList.add("a"); //a 클래스를 추가
+        btn.classList.remove("btn"); //btn 클래스를 삭제
+        btn.classList.contains("a"); // a 클래스가 있다면 true 없으면 false
+        btn.classList.toggle("xxx"); //xxx클래스가 없다면 추가, 있으면 제거
+      };
+    </script>
+
+    <hr />
+    <h3>
+      토글 버튼 = 하나의 버튼으로 2가지 이상의 기능을 하는 버튼 (클래스를 추가
+      or 제거)
+    </h3>
+    <style>
+      .x {
+        display: block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #777;
+      }
+      .a {
+        background-color: yellow;
+      }
+    </style>
+    <a href="#" class="x" id="x"> 마우스 오버영역</a>
+    <script>
+      var x = document.getElementById("x");
+      x.onmouseover = function () {
+        x.classList.add("a");
+      };
+      x.onmouseout = function () {
+        x.classList.remove("a");
+      };
+    </script>
+
+    <hr />
+    <button type="button" id="btn2">토글</button>
+    <script>
+      var btn2 = document.getElementById("btn2");
+      btn2.onclick = function () {
+        if (btn2.classList.contains("b")) {
+          // b클래스가 있다면 true
+          btn2.classList.remove("b");
+          document.body.style.backgroundColor = "white";
+        } else {
+          // b클래스가 없다면
+          btn2.classList.add("b");
+          document.body.style.backgroundColor = "yellow";
+        }
+      };
+    </script>
+  </body>
+</html>

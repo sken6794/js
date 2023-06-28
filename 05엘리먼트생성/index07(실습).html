@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="welcome"></div>
+    <div id="name">
+      <input type="text" id="mem" placeholder="이름을 입력하세요" />
+      <button id="okbtn">확인</button>
+    </div>
+    <br />
+    <input type="text" class="todo" placeholder="할일 적기" />
+    <button id="todobtn">확인</button>
+
+    <ul id="list"></ul>
+
+    <script>
+      var okbtn = document.getElementById("okbtn");
+      var mem = document.getElementById("mem");
+      var nametag = document.getElementById("name");
+      var welcome = document.querySelector(".welcome");
+
+      okbtn.onclick = function () {
+        var user = mem.value;
+
+        var p = document.createElement("p");
+        p.innerHTML = user + "님 반갑습니다";
+        nametag.style = "display:none";
+        welcome.appendChild(p);
+      };
+
+      var todobtn = document.getElementById("todobtn");
+      var todo = document.querySelector(".todo");
+      var list = document.getElementById("list");
+      todobtn.onclick = function () {
+        var li = document.createElement("li");
+        li.innerHTML =
+          todo.value +
+          '<button onclick="del(this.parentElement)">지우기</button>' +
+          '<button onclick="up(this.parentElement)">↑</button>' +
+          '<button onclick="down(this.parentElement)">↓</button>';
+        list.appendChild(li);
+        todo.value = "";
+      };
+
+      function del(params) {
+        params.remove();
+      }
+
+      function up(params) {
+        var ul = params.parentElement;
+        var prev = params.previousElementSibling;
+        if (prev === null) {
+          alert("이전 행 없음");
+        } else {
+          var bool = confirm("순서를 바꿀거?");
+          if (bool) {
+            ul.insertBefore(params, prev);
+          }
+        }
+      }
+      function down(params) {
+        var ul = params.parentElement;
+        var nt = params.nextElementSibling;
+        if (nt === null) {
+          alert("다음 행 없음");
+          return;
+        } else {
+          var bool = confirm("순서 바꿀거?");
+          if (bool) {
+            ul.insertBefore(nt, params);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
