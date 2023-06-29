@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="title"></p>
+    <ul class="box">
+      <li>1. 홍길동</li>
+      <li>2. 홍길자</li>
+      <li>3. 이순신</li>
+      <li>4. 김자바</li>
+      <li>5. 신용권</li>
+      <li>6. 검정치마</li>
+    </ul>
+
+    <script>
+      var box = document.querySelector(".box"); // ul
+      var title = document.querySelector(".title");
+      box.onclick = function (params) {
+        //console.log("d"); ul 자식들 눌려도 동작함
+
+        console.log(event.target); // li
+        console.log(event.currentTarget); //실제로 이벤트가 걸려있는 태그
+        console.log(this); // ul
+
+        //event.target.tagName : 이벤트가 동작한 태그명
+        if (event.target.tagName != "LI") {
+          return;
+        }
+        title.innerHTML = event.target.innerHTML;
+      };
+    </script>
+  </body>
+</html>

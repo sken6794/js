@@ -65,6 +65,17 @@
             </p>
             <a href="https://www.naver.com">위키백과</a>
           </div>
+          <div
+            class="hide"
+            style="display: none; border: 1px solid #777; height: 300px"
+          >
+            <p>
+              홍길자<br />
+              20세<br />
+              능력단위<br />
+              Java,Orcale,JSP<br />
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -83,18 +94,20 @@
         </div>
       </div>
     </section>
-    <script>
+    <!-- <script>
       var btn2 = document.getElementById("btn2");
       var sec1 = document.getElementById("sec1");
       var sec2 = document.getElementById("sec2");
       btn2.onclick = function (params) {
         if (btn2.classList.contains("a")) {
-          btn2.classList.remove("a");
+          //btn2.classList.remove("a");
+          btn2.classList.toggle("a");
           btn2.innerHTML = "이름보기";
           sec2.style.display = "none";
           sec1.style.display = "";
         } else {
-          btn2.classList.add("a");
+          //btn2.classList.add("a");
+          btn2.classList.toggle("a");
           btn2.innerHTML = "내용보기";
 
           sec1.style.display = "none";
@@ -106,20 +119,60 @@
       var center = document.querySelector(".center");
       btn1.onclick = function () {
         if (btn1.classList.contains("b")) {
-          btn1.classList.remove("b");
+          //btn1.classList.remove("b");
+          btn1.classList.toggle("b");
           btn1.innerHTML = "어둡게보기";
           document.body.style.backgroundColor = "white";
           center.style.color = "black";
           sec1.style.color = "black";
           sec2.style.color = "black";
         } else {
-          btn1.classList.add("b");
+          //btn1.classList.add("b");
+          btn1.classList.toggle("b");
           btn1.innerHTML = "밝게보기";
           document.body.style.backgroundColor = "black";
           center.style.color = "white";
           sec1.style.color = "white";
           sec2.style.color = "white";
         }
+      };
+    </script> -->
+    <!-- 강사님 -->
+    <script>
+      var tags = document.querySelectorAll("h2, p, a");
+      var body_tag = document.body;
+      var btn1 = document.getElementById("btn1");
+      btn1.onclick = function (params) {
+        if (btn1.className == "dark") {
+          //검은색
+          body_tag.style.backgroundColor = "black";
+          for (var i = 0; i < tags.length; i++) {
+            tags[i].style.color = "white";
+          }
+        } else {
+          //흰색
+          body_tag.style.backgroundColor = "white";
+          for (var i = 0; i < tags.length; i++) {
+            tags[i].style.color = "black";
+          }
+        }
+        btn1.classList.toggle("dark");
+      };
+
+      var inner = document.querySelector(".right > .inner");
+      var hide = document.querySelector(".hide");
+      var btn2 = document.getElementById("btn2");
+      btn2.onclick = function (params) {
+        if (btn2.className == "name") {
+          //이름보기로 변환
+          inner.style.display = "none";
+          hide.style.display = "block";
+        } else {
+          //내용보기로 변환
+          inner.style.display = "block";
+          hide.style.display = "none";
+        }
+        btn2.classList.toggle("name");
       };
     </script>
   </body>

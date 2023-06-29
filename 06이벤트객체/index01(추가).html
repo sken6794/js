@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      이벤트 객체 - 이벤트가 발생되면, 함수 안으로 자동으로 이벤트 객체를
+      전달해줌
+    </h3>
+
+    <button id="btn">이벤트 객체 확인</button>
+    <script>
+      var btn = document.getElementById("btn");
+      btn.onclick = function (e) {
+        //이벤트객체를 내포하고 있음
+        //이벤트에 관련한 정보가 있음
+        //(첫번째 매개변수로 넣어주도록 약속 되어 있음)
+        console.log(e);
+        console.log(e.target); //이벤트가 실제 동작한 태그
+      };
+    </script>
+  </body>
+</html>
