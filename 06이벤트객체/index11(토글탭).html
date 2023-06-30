@@ -66,6 +66,7 @@
       var menu = document.querySelectorAll(".toggle-menu");
 
       toggle.onclick = function (params) {
+        if (event.target.tagName != "LI") return;
         //console.log(event.target.dataset.id);
         var dataid = event.target.dataset.id;
         var id = document.querySelector(dataid);

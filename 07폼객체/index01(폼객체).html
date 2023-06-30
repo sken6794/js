@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="actionForm">
+      <h3>가입창</h3>
+
+      이름: <input type="text" name="name" id="" /> 번호:
+      <input type="text" name="phone" id="" onblur="phoneFunc()" />
+      분야 : <input type="checkbox" name="check" id="" /> CSS
+      <input type="checkbox" name="check" id="" />JS
+      <input type="checkbox" name="check" id="" /> HTML
+
+      <input type="submit" value="확인" id="btn" />
+    </form>
+
+    <script>
+      /* 폼태그는 document의 자식 중 하나로 유일하게 name 속성으로 접근 가능 */
+      /* input태그는 폼태그의 자식이여서 다시, name속성으로 접근 가능 */
+      //console.log(document.actionForm);
+      //console.log(document.actionForm.name);
+
+      var btn = document.getElementById("btn");
+      btn.onclick = function (params) {
+        event.preventDefault(); // 고유이벤트 중단 (여기서는 submit을 막음)
+
+        if (document.actionForm.name.value == "") {
+          alert("아이디는 필수입니다.");
+          document.actionForm.name.focus(); // actionForm 에 name 속성이 name인 곳으로 focus
+          return;
+        } else if (document.actionForm.phone.value.length != 11) {
+          alert("번호는 - 없이 11글자 입니다");
+          document.actionForm.phone.focus();
+          return;
+        } else {
+          var check = document.actionForm.check; //input의 name= check인 애들 다 가져옴
+          var cnt = 0;
+          for (var i = 0; i < check.length; i++) {
+            if (check[i].checked) {
+              cnt++;
+            }
+          }
+          if (cnt == 0) {
+            alert("분야는 최소 1개 선택");
+            return;
+          }
+        }
+        document.actionForm.submit();
+        console.log(1);
+      };
+
+      function phoneFunc(params) {
+        console.log(1);
+        //document.actionForm.phone.value.replaceAll("-", "");
+        var phone = document.querySelector("input[name='phone']");
+        phone.value = phone.value.replaceAll("-", "");
+      }
+    </script>
+  </body>
+</html>

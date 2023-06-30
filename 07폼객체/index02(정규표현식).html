@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form name="actionForm">
+      아이디: <input type="text" name="id" onkeypress="enterFunc()" /> 비밀번호
+      :
+      <input type="password" name="pw" onkeypress="enterFunc()" />
+      ..다른 내용
+      <button type="button" id="btn" onclick="joinCheck()">가입하기</button>
+    </form>
+    <script>
+      function joinCheck(params) {
+        var id = document.actionForm.id.value;
+        var pw = document.actionForm.pw.value;
+        /* 영문자로 시작하는 영문자 또는 숫자 6~20자 */
+        var regExp1 = /^[a-z]+[a-z0-9]{5,19}$/g;
+        /* 8~16자 영문,숫자,특수문자를 최소 한가지씩 조합 */
+        var regExp2 =
+          /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+
+        if (!regExp1.test(id)) {
+          alert("아이디는 영문자로 시작하는 영문자 또는 숫자 6~20자 입니다");
+          return;
+        } else if (!regExp2.test(pw)) {
+          alert(
+            "비밀번호는 8~16자 영문,숫자,특수문자를 최소 한가지씩 조합해야 합니다."
+          );
+          return;
+        }
+      }
+
+      function enterFunc(params) {
+        console.log(event);
+        if (event.keycode == 13) {
+          // enter의 키코드가 13임
+          joinCheck();
+        }
+      }
+    </script>
+  </body>
+</html>
