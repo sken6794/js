@@ -46,6 +46,7 @@
     <div class="clock">
       <h2>00:00:00</h2>
     </div>
+    <!-- 
     <script>
       var dataimg = document.body.dataset.img;
       var imgJSON = JSON.parse(dataimg);
@@ -72,6 +73,45 @@
           date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
         clock.innerHTML = hours + ":" + min + ":" + sec;
       }, 1000);
+    </script>
+ -->
+    <script>
+      var count = 0;
+      var clock = document.querySelector(".clock > h2");
+      function createImg(params) {
+        var data = document.body.dataset.img;
+        var obj = JSON.parse(data);
+
+        //img
+        var img = document.createElement("img");
+        img.src = obj[++count];
+        img.classList.add("bgImg");
+
+        document.body.appendChild(img);
+        //객체의 키들을 받아서 길이 확인. 키의 갯수를 알 수 있음
+        if (Object.keys(obj).length == count) count = 0;
+      }
+      function createTime(params) {
+        var date = new Date();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+
+        var result =
+          (hour < 10 ? "0" + hour : hour) +
+          ":" +
+          (minute < 10 ? "0" + minute : minute) +
+          ":" +
+          (second < 10 ? "0" + second : second);
+        clock.innerHTML = result;
+      }
+
+      (function () {
+        createImg();
+        setInterval(createImg, 5000);
+        createTime();
+        setInterval(createTime, 1000);
+      })();
     </script>
   </body>
 </html>

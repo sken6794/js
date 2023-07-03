@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    쿠키 이름 : <input type="text" name="" id="cookieName" />
+    <!--  -->
+    쿠키 값 : <input type="text" name="" id="cookieValue" />
+
+    <button id="createCookie">쿠키 생성</button>
+
+    찾을 쿠기 : <input type="text" name="" id="cookieFind" />
+    <button id="findCookie">쿠키 찾기</button>
+
+    <script>
+      //쿠키를 생성하는 규칙 (key = value, key = value ,,,,; expires=시간;)
+      //document.cookie = "xxx=aaa123; expires=" + new Date(2023, 7, 4).toUTCString() + ";";
+      function addCookie() {
+        var name = document.getElementById("cookieName").value;
+        var value = document.getElementById("cookieValue").value;
+
+        //만료 시간
+        var date = new Date();
+        date.setDate(date.getDate() + 7); //현재 시간 + 7일
+        var cookie = "";
+        cookie += name + "=" + value + "; "; // ;이후 공백 주의
+        cookie += "expires=" + date.toUTCString() + "; path=/"; //쿠키가 만들어진 경로의 하위경로에서도 해당 쿠키 사용 가능
+        document.cookie = cookie;
+        location.reload(); //내가 걍 한거임 쿠키 바로 확인하려고
+      }
+
+      //쿠키 생성이벤트
+      var createCookie = document.getElementById("createCookie");
+      createCookie.onclick = addCookie;
+
+      //쿠키 찾는 함수
+      function getCookie() {
+        //console.log(document.cookie);
+        var find = document.getElementById("cookieFind").value; //사용자가 찾을 쿠키 이름
+        var arr = document.cookie.split("; "); //; 기준 key=value 형태의 쿠키들을 받아올 것
+        //console.log(arr);
+        if (arr.length != 0) {
+          for (var i = 0; i < arr.length; i++) {
+            if (arr[i].indexOf(find + "=") != -1) {
+              //console.log("aaa키가 있음");
+              console.log("키 : " + find);
+
+              console.log("값 : 0" + arr[i].replace(find + "=", "")); //쿠키값
+            }
+          }
+        }
+      }
+      var findCookie = document.getElementById("findCookie");
+      findCookie.onclick = getCookie;
+
+      //쿠키삭제 = 동일한 키로 expires를 현재시간으로 맞춤.
+    </script>
+  </body>
+</html>

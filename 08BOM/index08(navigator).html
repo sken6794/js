@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(navigator);
+      console.log(navigator.geolocation);
+      //navigator.geolocation.getCurrentPosition(func, func)
+      //console.log(navigator.geolocation.getCurrentPosition());
+
+      navigator.geolocation.getCurrentPosition(success, fail);
+
+      //getCurrentPosition이 함수를 대신 실행시키고 실행결과를
+      //   callback의 첫번째 매개변수로 전달하도록 약속
+      function success(result) {
+        console.log(result);
+        console.log(result.coords);
+        console.log(result.coords.latitude); //위도
+        console.log(result.coords.longitude); //경도
+
+        //console.log(result["coords"]);
+      }
+      function fail() {
+        console.log("fail");
+        alert("위치 정보 허용 거절당함");
+      }
+    </script>
+  </body>
+</html>

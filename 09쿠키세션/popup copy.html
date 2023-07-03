@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="popup_tea.js"></script>
+  </head>
+  <body>
+    팝업창
+    <input type="checkbox" /> 오늘 하루 이 창을 열지 않기
+
+    <script>
+      var check = document.querySelector("input[type='checkbox']");
+      check.onchange = function (params) {
+        addCookie("main_popup", true);
+        window.close();
+      };
+    </script>
+  </body>
+</html>

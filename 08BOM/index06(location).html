@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">이동</button>
+    <button onclick="history.go(1)">앞 으 로 가 기</button>
+    <script>
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        location.href = "index06.html";
+
+        //replacestate - 기록 변경
+        history.replaceState({ data: "x" }, null, null); //데이터, 제목, url
+      };
+
+      //replacestate로 저장한 데이터를 확인할 수 있음
+      console.log(history.state);
+
+      if (history.state == null) {
+        //처음 들어왔을 경우
+        alert("가영이 바보");
+      }
+
+      //reload는 새로고침
+      /* setInterval(function (params) {
+        location.reload();
+      }, 5000); */
+    </script>
+  </body>
+</html>

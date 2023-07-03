@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>localStorage를 이용하여 마지막에 클릭한 2개의 정보를 불러오기</h3>
+
+    <div class="list">
+      <img src="img/1.jpg" width="300" />
+      <img src="img/2.jpg" width="300" />
+      <img src="img/3.jpg" width="300" />
+      <img src="img/4.jpg" width="300" />
+    </div>
+
+    <button type="button" onclick="location.href='quiz01_result.html';">
+      최신정보확인하기
+    </button>
+
+    <script>
+      //localStorage.clear();
+
+      var list = document.querySelector(".list");
+      if (localStorage.getItem("num") == null) {
+        localStorage.setItem("num", JSON.stringify(0));
+        list.onclick = function () {
+          var curnum = localStorage.getItem("num");
+
+          if (event.target.tagName != "IMG") {
+            return;
+          } else {
+            var src = event.target.src;
+            if (curnum == 2) curnum = 0;
+            localStorage.setItem(curnum, src);
+            localStorage.setItem("num", JSON.stringify(parseInt(curnum) + 1));
+          }
+        };
+      } else {
+        list.onclick = function () {
+          var curnum = localStorage.getItem("num");
+
+          if (event.target.tagName != "IMG") {
+            return;
+          } else {
+            var src = event.target.src;
+            if (curnum == 2) curnum = 0;
+            localStorage.setItem(curnum, src);
+            localStorage.setItem("num", JSON.stringify(parseInt(curnum) + 1));
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

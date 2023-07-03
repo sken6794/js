@@ -38,9 +38,6 @@
       <h2>00:00:00</h2>
     </div>
     <script>
-      var hh = document.querySelector(".hh");
-      var mm = document.querySelector(".mm");
-      var ss = document.querySelector(".ss");
       /* 시작 시 option 추가 3개 */
       window.addEventListener("load", function (params) {
         for (var i = 1; i < 100; i++) {
@@ -69,6 +66,9 @@
           ss.appendChild(optss);
         }
       });
+      var hh = document.querySelector(".hh");
+      var mm = document.querySelector(".mm");
+      var ss = document.querySelector(".ss");
       /* 시간 세팅 */
       var setTime = document.getElementById("setTime");
       var clock = document.querySelector(".clock > h2");
@@ -78,15 +78,51 @@
         var sels = ss.options[ss.selectedIndex].value;
         clock.innerHTML = selh + ":" + selm + ":" + sels;
       };
+
       /* 타이머 시작 */
       var startTime = document.getElementById("startTime");
+      var bool = true;
       startTime.onclick = function () {
         if (startTime.classList.contains("timer")) {
-          startTime.innerHTML = "일시정지";
-          startTime.classList.toggle("timer");
-        } else {
           startTime.innerHTML = "타이머시작";
           startTime.classList.toggle("timer");
+          bool = true;
+          clearInterval(stop);
+          console.log("dd", bool);
+        } else {
+          startTime.innerHTML = "일시정지";
+          startTime.classList.toggle("timer");
+          if (!bool) return;
+          bool = false;
+          console.log(bool, "ff");
+          var newcl = clock.innerHTML.split(":");
+          console.log(newcl[0], newcl[1], newcl[2]);
+          var tots =
+            parseInt(newcl[0]) * 3600 +
+            parseInt(newcl[1]) * 60 +
+            parseInt(newcl[2]);
+          console.log(parseInt(tots));
+          var ddd = 0;
+          const stop = setInterval(function (params) {
+            var curclock = tots - ddd;
+            ddd++;
+            var cursec = curclock % 60;
+            curclock /= 60;
+            var curmin = curclock % 60;
+            curclock /= 60;
+            var curhour = curclock;
+            console.log(
+              Math.floor(curhour),
+              Math.floor(curmin),
+              Math.floor(cursec)
+            );
+            clock.innerHTML =
+              Math.floor(curhour) +
+              ":" +
+              Math.floor(curmin) +
+              ":" +
+              Math.floor(cursec);
+          }, 1000);
         }
       };
       /* 타이머 인터벌 */
