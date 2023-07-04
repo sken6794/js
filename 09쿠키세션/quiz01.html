@@ -19,7 +19,7 @@
     <button type="button" onclick="location.href='quiz01_result.html';">
       최신정보확인하기
     </button>
-
+    <!-- 
     <script>
       //localStorage.clear();
 
@@ -52,6 +52,32 @@
           }
         };
       }
+    </script>
+ -->
+    <!-- 강사님거 -->
+    <script>
+      var list = document.querySelector('.list');
+      list.addEventListener('click', function () {
+        if (event.target.tagName != 'IMG') {
+          return;
+        }
+
+        var arr = new Array(0);
+
+        //기존 로컬 스토리지가 있다면 얻어와서 arr를 변경
+        if (localStorage.getItem('like') !== null) {
+          arr = JSON.parse(localStorage.getItem('like')); //갖고와서 새로 생성한 배열에 덮어씌우기
+        }
+
+        if (arr.length >= 2) {
+          arr.shift(); //배열의 앞에서 하나 제거
+        }
+
+        arr.push(event.target.src);
+
+        //로컬 스토리지에 arr 저장
+        localStorage.setItem('like', JSON.stringify(arr));
+      });
     </script>
   </body>
 </html>

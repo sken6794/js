@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+    <datas> 
+        <data> 
+            <name>Windows</name> 
+            <version>9</version> 
+            <price>99</price> 
+        </data> 
+        <data> 
+            <name>Mac</name> 
+            <version>15</version> 
+            <price>99999</price> 
+        </data> 
+        <data> 
+            <name>Linux</name> 
+            <version>123.4567</version> 
+            <price>0</price>
+        </data> 
+    </datas>
+<!-- 태그가 key가 되고 거기 들어있는 값이 value가 된다. -->

@@ -16,7 +16,7 @@
   <body>
     <h3>최신 관심 목록</h3>
     <div class="cartList"></div>
-
+    <!-- 
     <script>
       var cartList = document.querySelector(".cartList");
 
@@ -27,6 +27,23 @@
       img2.src = localStorage.getItem("1");
       cartList.appendChild(img);
       cartList.appendChild(img2);
+    </script>
+ -->
+    <!-- 강사님거 -->
+    <script>
+      var arr = JSON.parse(localStorage.getItem('like'));
+
+      if (arr != null) {
+        //값이 존재함
+        for (var i = 0; i < arr.length; i++) {
+          var img = document.createElement('img');
+          img.src = arr[i];
+          document.querySelector('.cartList').appendChild(img);
+        }
+      } else {
+        //값이 없음
+        document.querySelector('.cartList').innerHTML = '최신 정보가 없음';
+      }
     </script>
   </body>
 </html>
