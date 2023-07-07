@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RESERVATION - AMARE</title>
+    <!--메타태그-->
+    <link rel="shortcut icon" href="img/common/favicon.ico" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--폰트어썸-->
+    <script
+      src="https://kit.fontawesome.com/664033e5f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--폰트어썸-->
+
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+    <script src="js/swiper.js"></script>
+
+    <!--떠나요 요금연동 스크립트-->
+    <!-- <link rel="StyleSheet" href='//www.ddnayo.com/api/script.css' type="text/css" />
+    <script type="text/javascript" id="ddnayoapi" src="//www.ddnayo.com/api/script.aspx?apiuser=alwaysdesign" charset="utf-8"></script> -->
+    <!--떠나요 요금연동 스크립트-->
+
+    <!--스크롤 매직 cdn-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <!--스크롤 매직 cdn-->
+
+    <!--GSAP cdn-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <!--GSAP cdn-->
+
+    <!--야놀자스크립트 시작-->
+    <script
+      type="text/javascript"
+      src="http://rev.yapen.co.kr/js/tariff.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://rev.yapen.co.kr/css/tariff.css"
+    />
+    <!--야놀자스크립트 끝-->
+
+    <script src="js/frontend.js"></script>
+    <!--메타태그-->
+  </head>
+  <body>
+    <!--헤더-->
+    <header class="hd">
+      <div class="header-fixed-wrap">
+        <div class="inner-con">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="img/common/logo.png" alt="아마레"
+            /></a>
+          </div>
+
+          <button class="menu-btn">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="header-contents-wrap">
+        <div class="inner-con">
+          <div class="top-con">
+            <div class="menu-img-wrap">
+              <ul class="menu-img-list">
+                <li class="on">
+                  <img src="img/gallery/menu_img/1.jpg" alt="" />
+                </li>
+                <li><img src="img/gallery/menu_img/2.jpg" alt="" /></li>
+                <li><img src="img/gallery/menu_img/3.jpg" alt="" /></li>
+                <li><img src="img/gallery/menu_img/4.jpg" alt="" /></li>
+              </ul>
+            </div>
+            <nav class="main-menu-wrap">
+              <ul class="menu-wrap">
+                <li class="main-list">
+                  <span class="cata-num">01</span>
+                  <a href="sub1_view.html">Amare</a>
+                  <ul class="sub-menu">
+                    <li><a href="sub1_view.html">풍경</a></li>
+                    <li><a href="sub1_movie.html">영상</a></li>
+                    <li><a href="sub1_tour.html">여행안내</a></li>
+                    <li><a href="sub1_map.html">오시는길</a></li>
+                  </ul>
+                </li>
+                <li class="main-list">
+                  <span class="cata-num">02</span>
+                  <a href="sub2_room1.html">Rooms</a>
+                  <ul class="sub-menu">
+                    <li><a href="sub2_room1.html">1A</a></li>
+                    <li><a href="sub2_room2.html">1B</a></li>
+                    <li><a href="sub2_room3.html">2동독채</a></li>
+                    <li><a href="sub2_room4.html">3A</a></li>
+                    <li><a href="sub2_room5.html">3B</a></li>
+                    <li><a href="sub2_room6.html">4A</a></li>
+                    <li><a href="sub2_room7.html">4B</a></li>
+                    <li><a href="sub2_room8.html">아마레동</a></li>
+                  </ul>
+                </li>
+                <li class="main-list">
+                  <span class="cata-num">03</span>
+                  <a href="sub3_special1.html">Special</a>
+                  <ul class="sub-menu">
+                    <li><a href="sub3_special1.html">OCEAN VIEW</a></li>
+                    <li><a href="sub3_special2.html">POOLVILLA</a></li>
+                    <li><a href="sub3_special3.html">BBQ</a></li>
+                    <li><a href="sub3_special4.html">SUNRISE&amp;SUNSET</a></li>
+                    <li>
+                      <a href="sub3_special5.html">BEDDING&amp;AMENITY</a>
+                    </li>
+                    <li><a href="sub3_special6.html">EXPERIENCE</a></li>
+                    <li><a href="sub3_special7.html">CAMPFIRE</a></li>
+                    <li><a href="sub3_special8.html">FREE SERVICE</a></li>
+                  </ul>
+                </li>
+                <li class="main-list">
+                  <span class="cata-num">04</span>
+                  <a href="sub4_reser.html">Book</a>
+                  <ul class="sub-menu">
+                    <li><a href="sub4_reser.html">예약안내</a></li>
+                    <li><a href="" class="reser_btn">실시간예약</a></li>
+                    <li><a href="sub4_notice.html">공지사항</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="bottom-con">
+            <ul class="tel-wrap">
+              <li><a href="" class="tel_link1">010-5423-6592</a></li>
+              <li><a href="" class="tel_link2">010-9919-6592</a></li>
+            </ul>
+
+            <ul class="sns-wrap">
+              <li>
+                <a href="" class="insta_link"
+                  ><img
+                    src="img/common/ico_insta.png"
+                    alt="인스타검색"
+                  />INSTAGRAM</a
+                >
+              </li>
+              <li>
+                <a href="" class="blog_link"
+                  ><img
+                    src="img/common/ico_blog.png"
+                    alt="네이버블로그검색"
+                  />BLOG</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--헤더-->
+    <main class="reser-wrap top-img-wrap">
+      <section class="con1">
+        <div class="top-img-wrap">
+          <div class="vdo-wrap top-vdo">
+            <iframe
+              src="https://player.vimeo.com/video/746758674?autoplay=1&loop=1&title=0&byline=0&portrait=0&background=1&muted=1&autopause=0&controls=-0"
+              style="z-index: 1; overflow: hidden"
+              frameborder="0"
+              allow="autoplay;loop fullscreen"
+              allowfullscreen
+            ></iframe>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+          </div>
+          <div class="tit-wrap">
+            <h3>
+              <span>Reservation</span>
+            </h3>
+          </div>
+        </div>
+      </section>
+      <section class="con2">
+        <div class="inner-con">
+          <div class="intro-cata">
+            <div class="line"></div>
+            <div class="txt">
+              <span>RESERVATION</span>
+              <span>AMARE</span>
+            </div>
+          </div>
+          <figure class="intro-section">
+            <div class="img-wrap">
+              <div class="img img1 scroll-obj">
+                <div class="img-box">
+                  <img src="img/sub4_reser_img1.jpg" alt="" />
+                </div>
+              </div>
+              <div class="img img2 scroll-obj">
+                <div class="img-box">
+                  <img src="img/sub4_reser_img2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="img img3 scroll-obj">
+                <div class="img-box">
+                  <img src="img/sub4_reser_img3.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="txt-wrap">
+              <div class="inner-950">
+                <div class="tit">
+                  <h3 class="scroll-obj fadeY">Special memories</h3>
+                  <h5 class="scroll-obj fadeY">during</h5>
+                  <h3 class="scroll-obj fadeY">a joyful trip</h3>
+                </div>
+                <div class="txt">
+                  <ol class="scroll-obj fadeY">
+                    <li>
+                      예약방법 : 실시간 + 전화 (상담시간 : 오전 09시 ~ 오후
+                      21시)
+                    </li>
+                    <li>
+                      예약전화 :
+                      <a href="" class="tel_link1">010-5423-6592</a> /
+                      <a href="" class="tel_link2">010-9919-6592</a>
+                    </li>
+                    <li>예약계좌 : 신한은행 110-288-380094 (예금주:김창규)</li>
+                  </ol>
+                  <p class="scroll-obj fadeY">
+                    주중 : 일요일~목요일 / 주말 : 토요일, 법정공휴일 전날<br />
+                    성수기 기간 : 실시간예약 달력을 참고하세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </figure>
+          <figure class="price-section scroll-obj fadeY">
+            <!-- <div style="width:100%;" id="total_daily_price2"></div> -->
+            <!--야놀자 전체요금표 연동 시작-->
+            <script>
+              callYapenPriceTable(
+                'priceLayer',
+                '22806',
+                'ybs',
+                'http://rev.yapen.co.kr/external?ypIdx=22806',
+                'open',
+                'Y',
+                'R'
+              );
+            </script>
+            <div id="priceLayer"></div>
+            <!--배경흰색div id="priceLayer" style="background-color:#FFFFFF"></div-->
+            <!--야놀자 전체요금표 연동 시작-->
+          </figure>
+          <figure class="info-section">
+            <div class="reser-info-wrap">
+              <h3 class="scroll-obj fadeY">
+                <span class="txt">Reservation Info</span>
+              </h3>
+              <p class="scroll-obj fadeY">
+                <!--
+                            입실 당일 객실 도어락 비밀번호를 받으셔야 합니다. ( 입실이 늦어 지시는 경우 반드시 연락을 부탁 드립니다)<br>
+                            미성년자는 보호자 동반 없이 이용 하실 수 없습니다<br>
+                            한 팀이 여러 개의 객실을 이용 할 수 없으며 일부 객실은 두 커플의 동반 입실을 제한 합니다<br>
+                            반려 동물과 함께 입실 할 수 없으며 동반 입실 하는 경우 환불 없이 강제 퇴실 조치 됩니다.<br>
+                            객실 내에서는 절대 금연입니다. (객실 내 연기감지기가 작동 됩니다)<br>
+                            예약 손님 외 방문객의 입실은 불가하며 이로 인해 강제 퇴실 조치 되실 수 있으며 환불 불가 합니다.<br>
+                            실내 수영장 이용 시 수영장 안전수칙을 반드시 지켜 주세요<br>
+                            퇴실 시 점검 하고 있으며 객실의 비품 등 파손이나 오염 시 변상 조치 하고 있으니 특별히 주의 부탁 드리겠습니다<br>	
+                            저희 펜션에서는 이용 하시면서 발생 되는 각종 안전 사고에 대한 책임을 지지 않습니다.<br> 항상 안전에 신경 써 주세요<br>	
+                            입실 시 안내문에 서명 해 주시고  보증금을 받고 있으니 이점 확인 후 예약 해 주세요
+-->
+                1. 아마레의 입실 시간은 오후 3시, 퇴실은 오전 11시 입니다.<br />
+                저희 풀빌라의 모든 침구류는 매일 세탁 하고 있으며 퇴실 후 소독
+                및 환기 등 방역에 힘쓰고 있습니다.<br />
+                이로 인해 입·퇴실 시간을 변경 해드릴 수 없습니다.<br /><br />
+
+                ※ 입실 전일 안내 메시지를 발송 해 드리고 있습니다. <br />
+                안심번호로 등록 해 놓으신 경우나 장문 메시지를 차단 해놓으신
+                경우 메시지 전송이 어려울 수 있는 점 참고 바랍니다<br /><br />
+
+                2. 이용 중 객실 내 비치 된 비품이나 인테리어 소품, 침구 등의
+                오염이나 파손 시 <br />
+                구입 당시 금액으로 변상 해 주시거나 동일한 상품으로 대체를 해
+                주셔야 하오니 <br />
+                예약 진행 시 반드시 참고 부탁 드립니다. ( 욕실용품, 주방용품 등
+                포함됩니다. )<br /><br />
+
+                3. 저희 아마레는 쾌적한 환경을 위하여 객실 내 흡연, 음식 냄새가
+                심한 (육류, 해산물, 튀김 등) 조리를 금지하고 있으며 <br />
+                모기향, 개인 화기류 ( 숯, 가스나 전기 그릴 ) 등 은 반입 하실 수
+                없으며<br />
+                적발 시 별도의 객실 청소 비용과 강제 퇴실 조치 및 이로 인한
+                환불도 불가 합니다.<br />
+                ※ 풀빌라 내 폭죽 사용 금지<br /><br />
+
+                4. 예약 손님 외 방문객의 입실은 절대 불가 하며 이 또한 환불 없는
+                강제 퇴실 됩니다.<br />
+                ※ 애완동물과 동반 입실 하실 수 없습니다.<br /><br />
+
+                5. 실내 수영장 이용 시 반드시 수영장 안전수칙을 지켜 주시고
+                풀빌라를 이용 중 <br />
+                발생 되는 모든 사고 ( 안전사고, 화재, 분실, 차량 간 접촉 사고 )
+                에 대한 법적 책임을 지지 않습니다. <br />안전에 유의해주세요
+                !!<br /><br />
+
+                6. 숙박권은 양도 양수 하실 수 없으며 부득이한 경우에는 취소 후
+                재진행 하셔야 합니다.<br /><br />
+
+                7. 입실 시 이용 안내문에 서명 해 주시고 퇴실 시에는 점검을 진행
+                하고 있으니 이점 양해 바랍니다.<br />
+                ※ 보호자가 동반 하지 않는 미성년자의 입실은 제한하고 있습니다.
+              </p>
+              <div class="info scroll-obj fadeY">
+                <h5>01. 입금 및 예약확인</h5>
+                <ol class="dash-list">
+                  <li>
+                    입금 시 예약자와 입금자명이 다를 경우 필히 확인 전화
+                    주십시오.
+                  </li>
+                  <li>
+                    실시간예약 달력으로 예약시 발송되는 문자(객실,투숙일,요금)를
+                    확인하세요.
+                  </li>
+                </ol>
+              </div>
+              <div class="info scroll-obj fadeY">
+                <h5>02. 최대인원 초과시</h5>
+                <ol class="dash-list">
+                  <li>최대인원 초과시 입실 및 환불이 불가합니다.</li>
+                  <li>1실 이상 예약은 사전 협의 후 예약하시기 바랍니다.</li>
+                </ol>
+              </div>
+              <div class="info scroll-obj fadeY">
+                <h5>03. 입실시간</h5>
+                <ol class="dash-list">
+                  <li>이용당일 15:00 ~ 21:00 까지입니다.</li>
+                  <li>
+                    21시 이후 펜션에 도착하실 경우 미리 연락하셔야 하며,사전
+                    연락이 없을 경우 입실을 제한 받을 수 있습니다.
+                  </li>
+                  <li>
+                    입실 시간 보다 늦어 지시는 경우에는 미리 연락을 주셔야
+                    합니다 <br />
+                    (체크인과 동시에 편의를 위한 수영장 온수준비,에어컨, 난방,
+                    조명 점등, 환기 등 입실 전 준비에 신경 쓰고 있습니다 )
+                  </li>
+                </ol>
+              </div>
+              <div class="info scroll-obj fadeY">
+                <h5>04. 퇴실시간</h5>
+                <ol class="dash-list">
+                  <li>
+                    마지막 이용일 오전11시까지입니다. (퇴실 시간 연장 불가
+                    합니다)
+                  </li>
+                  <li>
+                    다음 이용인을 위하여 퇴실시간을 준수해 주시기 바랍니다.
+                  </li>
+                </ol>
+              </div>
+              <div class="info scroll-obj fadeY">
+                <h5>05. 객실정리</h5>
+                <ol class="dash-list">
+                  <li>객실 정리 후 퇴실 점검을 받으셔야 합니다.</li>
+                  <li>
+                    이용중 집기 파손 시에는 펜션지기에게 알려주시기 바랍니다
+                  </li>
+                  <li>쓰레기는 지정된 장소에 분리하여 주시기 바랍니다.</li>
+                </ol>
+              </div>
+              <div class="info scroll-obj fadeY">
+                <h5>06. 취사 및 바비큐</h5>
+                <ol class="dash-list">
+                  <li>
+                    오후 10시 까지 이용 가능 하시고 고성방가는 타 객실손님을
+                    위하여 주의를 요청 드립니다. <br />(블루투스 마이크 이용
+                    안됨)
+                  </li>
+                  <li>
+                    객실내에서는 육류(삼겹살/튀김류) 구이를 금하오니 지정된
+                    장소를 이용하시길 부탁드립니다.<br />(화재 및 냄새로 인한
+                    타손님 배려 차원입니다)
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="refund-wrap">
+              <h3 class="scroll-obj fadeY">
+                <span class="txt">Refund Info</span>
+              </h3>
+              <p class="scroll-obj fadeY">
+                "올바른 예약문화 정착을 위하여 해당 업소에서는<br />
+                예약 취소시 환불기준을 아래와 같이 운영하고 있으니<br />
+                확인을 하시고 예약해주시기 바랍니다.<br />
+                당일예약 후 당일 취소시에도 수수료 적용되니 신중히 예약바랍니다.
+                "
+              </p>
+              <table class="refund-table scroll-obj fadeY">
+                <thead>
+                  <tr>
+                    <th>이용일기준</th>
+                    <th>취소수수료</th>
+                    <th>환불율</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>이용일 당일 취소시</td>
+                    <td>100%</td>
+                    <td>환불없음</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 1일전 취소시</td>
+                    <td>100%</td>
+                    <td>0% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 2일전 취소시</td>
+                    <td>100%</td>
+                    <td>0% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 3일전 취소시</td>
+                    <td>90%</td>
+                    <td>10% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 4일전 취소시</td>
+                    <td>50%</td>
+                    <td>50% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 5일전 취소시</td>
+                    <td>50%</td>
+                    <td>50% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 6일전 취소시</td>
+                    <td>40%</td>
+                    <td>60% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 7일전 취소시</td>
+                    <td>10%</td>
+                    <td>90% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 8 ~20일전 취소시</td>
+                    <td>10%</td>
+                    <td>90% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>이용일 21일전 취소시</td>
+                    <td>5%</td>
+                    <td>90% 환불</td>
+                  </tr>
+                  <tr>
+                    <td>기본 취소 수수료</td>
+                    <td>5%</td>
+                    <td>95% 환불</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <!--푸터-->
+
+    <!-- 20220630리포트2.0 로그분석코드 시작 -->
+    <script type="text/javascript">
+      var sTime = new Date().getTime();
+      (function (i, s, o, g, r, a, m) {
+        i['webObject'] = g;
+        i['webUid'] = r;
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        'script',
+        '//awdesign.weblog.cafe24.com/weblog.js?v=' + sTime,
+        'awdesign_4'
+      );
+    </script>
+    <!-- 리포트2.0 로그분석코드 완료 -->
+
+    <footer class="ft">
+      <div class="vdo-popup-wrap">
+        <div class="vdo-wrap">
+          <iframe
+            src="https://player.vimeo.com/video/746759198?loop=1&title=0&byline=0&portrait=0&background=1&autopause=0&controls=-0"
+            style="z-index: 1; overflow: hidden"
+            frameborder="0"
+            allow="autoplay;loop fullscreen"
+            allowfullscreen
+          ></iframe>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+          <button class="close-btn">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="ft-overflow">
+        <div class="ft-round-wrap">
+          <div class="inner-con">
+            <div class="ft-vdo-wrap">
+              <a href="">
+                <img src="img/ft_vdo_img.png" alt="" />
+                <div class="txt-wrap">
+                  <h3>Amare Story</h3>
+                  <p>
+                    아마레가 건네는 <br class="m-br" />낭만이 깃든 공간
+                    <br class="m-br" />바로가기
+                  </p>
+                  <i class="fad fa-play-circle"></i>
+                </div>
+              </a>
+            </div>
+            <div class="ft-info">
+              <div class="ft-logo">
+                <img src="img/common/logo.png" alt="풀빌라 아마레" />
+              </div>
+              <div class="ft-top-info">
+                <div class="ft-address-wrap">
+                  <p class="address">
+                    상호 : 풀빌라아마레 ( PoolVilla Amare )<br />
+                    Tel : <a href="" class="tel_link1">010-5423-6592</a><br />
+                    사업자 번호 : 682-73-00107(대표:김창규외 1명)<br />
+                    주소 : 충남 태안군 안면읍 풍어제길 44-47<br />
+                    <a href="../board/adm" class="ft_adm" target="_blank"
+                      >관리자로그인</a
+                    >
+                  </p>
+                </div>
+                <div class="ft-menu-wrap"></div>
+              </div>
+              <div class="ft-bottom-info">
+                <p class="copyright">
+                  COPYRIGHT RESERVED.<br class="m-br" />
+                  PHOTO & DESIGNED BY
+                  <a
+                    href="http://www.always-design.com"
+                    target="_blank"
+                    class="icon-aw_logo_svg"
+                    >언제나디자인</a
+                  ><br />
+                </p>
+                <ol class="sns-wrap">
+                  <li>
+                    <a href="" class="reser_btn"
+                      ><img src="img/common/ico_clock.png" alt="실시간예약"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="" class="insta_link"
+                      ><img src="img/common/ico_insta.png" alt="인스타그램"
+                    /></a>
+                  </li>
+                  <li>
+                    <a href="" class="blog_link"
+                      ><img src="img/common/ico_blog.png" alt="네이버블로그"
+                    /></a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--푸터-->
+  </body>
+</html>
+
+<!--떠나요 전체요금표(일자별) 시작-->
+<!-- <script type="text/javascript">
+    ddnayo.price.dailytable($("#total_daily_price2").get(0), {
+        "id_hotel": "2759"		/* 업소 코드 */
+        , "su_day": "5"		        /* 출력일자 : 파라미터 생략시 기본 7일 최대 7일 */
+    });
+</script> -->
+<!-- 떠나요 전체요금표 끝-->

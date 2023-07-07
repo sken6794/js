@@ -1,0 +1,9 @@
+<!-- 예약하기 modal -->
+            <button
+              type="button"
+              class="btn btn-primary reservbtn"
+              data-bs-toggle="modal"
+              data-bs-target="#reservModal"
+            >
+              예약 하기
+            </button>

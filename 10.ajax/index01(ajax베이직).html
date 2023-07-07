@@ -8,15 +8,15 @@
   <body>
     <script>
       /* //동기 => 순차적으로 실행
-      //비동기 => 비순차적으로 실행
-      console.log(1);
-      fetch('hi.txt').then((response) => {
-        response.text().then((text) => {
-          console.log(text);
-        });
-      });
+           //비동기 => 비순차적으로 실행
+           console.log(1);
+           fetch('hi.txt').then((response) => {
+             response.text().then((text) => {
+               console.log(text);
+             });
+           });
 
-      console.log(2); */
+           console.log(2); */
 
       //2nd
       //fetch를 사용하면 promise 객체를 반환 (상태를 가지고 있는 객체)
@@ -56,26 +56,33 @@
       //     }
       //   });
 
-      fetch('hi.txt')
-        .then((response) => {
-          if (response.status != 200) {
-            console.log('통신 실패');
-            return;
-          }
+      /* fetch('hi.txt')
+             .then((response) => {
+               if (response.status != 200) {
+                 console.log('통신 실패');
+                 return;
+               }
 
-          return response.text(); //이 결과는 fetch 함수의 리턴으로 연결
-        })
-        .then((data) => {
-          console.log(1);
-          return data;
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((e) => {
-          console.log(e); //에러시에 실행됨
-        });
+               return response.text(); //이 결과는 fetch 함수의 리턴으로 연결
+             })
+             .then((data) => {
+               console.log(1);
+               return data;
+             })
+             .then((data) => {
+               console.log(data);
+             })
+             .catch((e) => {
+               console.log(e); //에러시에 실행됨
+             });
+      */
+      async function test() {
+        const response = await fetch('hi.txt');
+        //const testdata = await response.json();
+        console.log(response.text());
+      }
 
+      test();
       //console.log(result);
     </script>
   </body>

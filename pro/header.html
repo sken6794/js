@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script src="js/bootstrap.min.js"></script>
+<style>
+  .header {
+    text-align: center;
+    position: fixed;
+    padding-top: 20px;
+    height: 150px;
+
+    background-color: #ddcbbe;
+    font-family: 'Lato', sans-serif;
+    color: whitesmoke;
+  }
+  .header a {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  .head-con {
+    position: relative;
+  }
+  .header > i > .img1 {
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    height: 70px;
+  }
+  .header > i > .img2 {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    height: 40px;
+  }
+  .header-menu > div > a:hover {
+    color: #555555;
+  }
+</style>
+
+<div class="container-fluid head-con">
+  <div class="row">
+    <div class="col-lg-12 header">
+      <i><img src="img2/logo2.png" alt="" class="img1" /></i>
+      <i><img src="img2/top_icon3.png" alt="" class="img2" /></i>
+      <div>
+        <p class="fs-1">Cheolsoo Salon</p>
+        <div class="container">
+          <div class="row justify-content-md-center header-menu">
+            <div class="col-lg-1 col-md-1"><a href="#">Home</a></div>
+            <div class="col-lg-1 col-md-1"><a href="#">Profile</a></div>
+            <div class="col-lg-1 col-md-1"><a href="#">Reservation</a></div>
+            <div class="col-lg-1 col-md-1"><a href="#">Location</a></div>
+            <div class="col-lg-1 col-md-1">
+              <a href="#" class="logintab">Login</a>
+              <script>
+                function checkLogin() {
+                  var login = sessionStorage.getItem('name');
+                  if (login !== null) {
+                    return true;
+                    console.log(1);
+                  } else {
+                    return false;
+                    console.log(1);
+                  }
+                }
+
+                window.addEventListener('load', () => {
+                  if (checkLogin()) {
+                    console.log(1);
+                    loginA.innerHTML = 'Logout';
+                    loginA.classList.toggle('login');
+                  } else {
+                    console.log(2);
+                    loginA.innerHTML = 'LogIn';
+                    loginA.classList.toggle('login');
+                  }
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

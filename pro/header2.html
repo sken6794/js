@@ -1,0 +1,175 @@
+<header class="hd">
+  <div class="header-fixed-wrap">
+    <div class="inner-con">
+      <div class="logo">
+        <a href="index.html"><img src="img/common/logo.png" alt="아마레" /></a>
+      </div>
+
+      <button class="menu-btn">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="header-contents-wrap">
+    <div class="inner-con">
+      <div class="top-con">
+        <div class="menu-img-wrap">
+          <ul class="menu-img-list">
+            <li class="on">
+              <img src="img/gallery/menu_img/1.jpg" alt="" />
+            </li>
+            <li><img src="img/gallery/menu_img/2.jpg" alt="" /></li>
+            <li><img src="img/gallery/menu_img/3.jpg" alt="" /></li>
+            <li><img src="img/gallery/menu_img/4.jpg" alt="" /></li>
+          </ul>
+        </div>
+        <nav class="main-menu-wrap">
+          <ul class="menu-wrap">
+            <li class="main-list">
+              <span class="cata-num">01</span>
+              <a href="sub1_view.html">Amare</a>
+              <ul class="sub-menu">
+                <li><a href="sub1_view.html">풍경</a></li>
+                <li><a href="sub1_movie.html">영상</a></li>
+                <li><a href="sub1_tour.html">여행안내</a></li>
+                <li><a href="sub1_map.html">오시는길</a></li>
+              </ul>
+            </li>
+            <li class="main-list">
+              <span class="cata-num">02</span>
+              <a href="sub2_room1.html">Rooms</a>
+              <ul class="sub-menu">
+                <li><a href="sub2_room1.html">1A</a></li>
+                <li><a href="sub2_room2.html">1B</a></li>
+                <li><a href="sub2_room3.html">2동독채</a></li>
+                <li><a href="sub2_room4.html">3A</a></li>
+                <li><a href="sub2_room5.html">3B</a></li>
+                <li><a href="sub2_room6.html">4A</a></li>
+                <li><a href="sub2_room7.html">4B</a></li>
+                <li><a href="sub2_room8.html">아마레동</a></li>
+              </ul>
+            </li>
+            <li class="main-list">
+              <span class="cata-num">03</span>
+              <a href="sub3_special1.html">Special</a>
+              <ul class="sub-menu">
+                <li><a href="sub3_special1.html">OCEAN VIEW</a></li>
+                <li><a href="sub3_special2.html">POOLVILLA</a></li>
+                <li><a href="sub3_special3.html">BBQ</a></li>
+                <li><a href="sub3_special4.html">SUNRISE&amp;SUNSET</a></li>
+                <li>
+                  <a href="sub3_special5.html">BEDDING&amp;AMENITY</a>
+                </li>
+                <li><a href="sub3_special6.html">EXPERIENCE</a></li>
+                <li><a href="sub3_special7.html">CAMPFIRE</a></li>
+                <li><a href="sub3_special8.html">FREE SERVICE</a></li>
+              </ul>
+            </li>
+            <li class="main-list">
+              <span class="cata-num">04</span>
+              <a href="sub4_reser.html">Book</a>
+              <ul class="sub-menu">
+                <li><a href="sub4_reser.html">예약안내</a></li>
+                <li><a href="" class="reser_btn">실시간예약</a></li>
+                <li><a href="sub4_notice.html">공지사항</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="bottom-con">
+        <ul class="tel-wrap">
+          <li><a href="" class="tel_link1">010-5423-6592</a></li>
+          <li><a href="" class="tel_link2">010-9919-6592</a></li>
+        </ul>
+
+        <ul class="sns-wrap">
+          <li>
+            <a href="" class="insta_link"
+              ><img
+                src="img/common/ico_insta.png"
+                alt="인스타검색"
+              />INSTAGRAM</a
+            >
+          </li>
+          <li>
+            <a href="" class="blog_link"
+              ><img
+                src="img/common/ico_blog.png"
+                alt="네이버블로그검색"
+              />BLOG</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    //해더 이미지 높이조절
+    const header_img_height = function () {
+      const container = $('.header-contents-wrap'),
+        img_wrap = container.find('.menu-img-wrap');
+
+      function calc_height() {
+        const img = img_wrap.find('img');
+        img_wrap.css('height', img.innerHeight());
+      }
+      calc_height();
+      $(window).on('load', function () {
+        calc_height();
+      });
+      $(window).on('resize', function () {
+        calc_height();
+      });
+    };
+    header_img_height();
+
+    //해더 픽스
+    const header_fixed_animate = function () {
+      let duration;
+      function calc_duration() {
+        if ($(window).width() > 700) {
+          duration = $('.con1').innerHeight();
+        } else {
+          duration = 80;
+        }
+      }
+      calc_duration();
+      $(window).on('resize', function () {
+        calc_duration();
+      });
+
+      function fixed_trigger() {
+        if ($(window).scrollTop() >= duration) {
+          $('.hd').addClass('fixed');
+        } else {
+          $('.hd').removeClass('fixed');
+        }
+      }
+      fixed_trigger();
+      $(window).on('scroll', function () {
+        fixed_trigger();
+      });
+    };
+    header_fixed_animate();
+
+    //해더 클릭 이벤트
+    const header_click = function () {
+      const hd = $('.hd'),
+        menu_btn = hd.find('.menu-btn');
+      let i = 0;
+      menu_btn.on('click', function () {
+        if (i == 0) {
+          i++;
+          hd.addClass('click');
+        } else {
+          i--;
+          hd.removeClass('click');
+        }
+      });
+    };
+    header_click();
+  </script>
+</header>

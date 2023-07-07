@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>리다이렉트 된 결과( 서버 상태여야 한다. )(지금은 예제라 그럼)</h3>
+
+    <script>
+      //카카오 서버에서 인가코드를 url 주소에 담아서 보내준다.
+      //3. 인가코드 얻기
+
+      const searchParams = new URLSearchParams(location.search);
+      //console.log(searchParams);
+      var val = searchParams.get('code');
+      //console.log(val);
+
+      //4. 토큰 발급 받기
+      if (val != null) {
+        ajax();
+      }
+
+      function ajax() {
+        var uri = 'http://127.0.0.1:5500/11.JSAPI/index03.html';
+        var client_id = 'cd80b8c3a799ac94b8c78d42cb754210';
+        var data =
+          'grant_type=authorization_code' +
+          '&client_id=' +
+          client_id +
+          '&redirect_uri=' +
+          uri +
+          '&code=' +
+          val;
+
+        // 토큰 요청
+        //데이터를 보내는데 form 형식이라면 key=value&key=value... 의 형태이다.
+        // json 형식이라면 {key : value ~ }
+        //fetch 의 post 방식으로 2번째 매개변수에 원하는 값들 설정
+        fetch('https://kauth.kakao.com/oauth/token', {
+          method: 'post',
+          headers: {
+            //요청에 대한 타입
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8', //폼형식
+          },
+          body: data,
+        })
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            //세션stroage기 때문에 브라우저 종료시 삭제
+            //쿠키 & 세션스토리지 사용해서 토큰 값을 챙겨놓기
+            sessionStorage.setItem('kakao_access', data.access_token);
+            //sdk에 access_token 저장 //js로 할 때
+            //Kakao.Auth.setAccessToken(data.access_token);
+
+            //RestAPI로 할 때
+            getUser(data.access_token);
+          });
+      }
+
+      //5. 토큰기반으로 API호출하기 JS로 처리
+      function getUser(token) {
+        fetch('https://kapi.kakao.com/v2/user/me', {
+          mathod: 'post',
+          headers: {
+            Authorization: 'Bearer ' + token,
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
+          },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          });
+      }
+    </script>
+  </body>
+</html>
